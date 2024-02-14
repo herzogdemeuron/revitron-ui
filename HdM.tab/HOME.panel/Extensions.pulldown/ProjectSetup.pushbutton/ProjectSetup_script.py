@@ -2,9 +2,11 @@
 """
 Define extensions to be used with this Revit model. Defined extensions can be installed by using the "Install Extensions" button. 
 """
+import os
+import runpy
 import revitron
 import System.Windows
-from pyrevit import script
+from pyrevit import script, forms
 from rpw.ui.forms import FlexForm, TextBox, Button, Label
 
 
@@ -62,3 +64,17 @@ if not revitron.Document().isFamily():
 		    'rpm.extensions',
 		    form.values.get('extensions')
 		)
+
+		res = forms.alert(
+			'Do you want to reload the extensions now?',
+			title='Extension Update',
+			options=["Yes",
+					"No"])
+		
+		if res == "Yes":
+			current_script_dir = os.path.dirname(__file__)
+			relative_path = os.path.join(current_script_dir, '..', 'InstallExtensions.pushbutton', 'InstallExtensions_script.py')
+			target_script_path = os.path.normpath(relative_path)
+			runpy.run_path(target_script_path)
+
+

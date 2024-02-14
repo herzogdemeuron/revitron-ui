@@ -1,3 +1,3 @@
 layout:
-  - ProjectSetup[title:Edit Project Setup]
-  - InstallExtensions[title:Install Extensions]
+  - ProjectSetup[title:Edit]
+  - InstallExtensions[title:Update]
