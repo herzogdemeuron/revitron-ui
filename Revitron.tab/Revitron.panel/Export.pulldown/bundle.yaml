@@ -1,9 +1,0 @@
-layout:
-  - PDFActive[title:Export Active Sheet as PDF]
-  - PDFMultiple[title:Batch Export Multiple Sheets as PDF]
-  - -----
-  - DWGActive[title:Export Active Sheet as DWG]
-  - DWGMultiple[title:Batch Export Multiple Sheets as DWG]
-  - -----
-  - ExportSettings[title:Export Settings]
-  - Help

@@ -1,0 +1,3 @@
+layout:
+  - ProjectSetup[title:Edit]
+  - InstallExtensions[title:Update]
