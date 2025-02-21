@@ -36,15 +36,11 @@ if not revitron.Document().isFamily():
 			extRepo = ''
 
 		if extRepo:
-			try:
-				extName = os.path.basename(extRepo).replace('.git', '')
-				out.print_html('Installing {}'.format(extName))
-				extManager.install(extName, extRepo, extType)
-			except:
-				try:
-					mlogger.error('Installing {} failed'.format(extName))
-				except:
-					pass
+
+			extName = os.path.basename(extRepo).replace('.git', '')
+			out.print_html('Installing {}'.format(extName))
+			extManager.install(extName, extRepo, extType)
+		
 
 	out.print_html('<br>Installation has finished. Reloading ...')
 	rpm.system.Session.reload()
